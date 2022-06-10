@@ -1,7 +1,7 @@
-<ion-card>
+<ion-card *ngFor="let cuenta of cuentas">
 
   <ion-card-title class="ion-padding-horizontal ion-margin-bottom" >
-    <h2>Aqui ira el numero de cuenta</h2>
+    <h2>CUENTA NO. {{cuenta.NoCuenta}}</h2>
    </ion-card-title>
 
   <ion-card-subtitle class="ion-margin">
@@ -13,7 +13,8 @@
         <ion-button (click)="onAbrirMenu()" fill="clear">
           <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
         </ion-button>
-        <h3>Monto</h3>
+        <p>Saldo</p>
+        <h3>Q.{{cuenta.Monto}}</h3>
       </ion-col>
 
     </ion-row>
@@ -24,7 +25,11 @@
   <!-- <ion-card-content
   *ngIf="article.description"> -->
   <ion-card-content>
-    <p>Aqui ira si es cuenta monetaria o de ahorro</p>
+    <p *ngIf="cuenta.MonAho">Tipo de cuenta: Ahorro
+    </p>
+    <p *ngIf="!cuenta.MonAho">Tipo de cuenta: Monetaria
+    </p>
+    <p>{{cuenta.Nombre}}</p>
   </ion-card-content> 
 
   

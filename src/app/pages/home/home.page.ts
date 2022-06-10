@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { Cuenta } from '../interfaces/interfaces';
+import { Component, OnInit } from '@angular/core';
+import { Cuenta } from 'src/app/interfaces/interfaces';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class Tab2Page {
+export class HomePage implements OnInit {
 
   public cuentas: Cuenta[] = [{
     NoCuenta: 122,
@@ -38,7 +38,10 @@ export class Tab2Page {
   }];
   ideas: string[] = ['Spiderman', 'Avenger', 'La vida es bella'];
 
-  constructor() {}
+  constructor() { }
+
+  ngOnInit() {
+  }
 
   loadData(){
     console.log('cargar mas datos');

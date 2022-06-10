@@ -1,0 +1,23 @@
+<ion-header [translucent]="true" mode="ios" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Cuentas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+ <app-cuentas
+ [cuentas]="cuentas">
+ </app-cuentas>
+
+ <ion-infinite-scroll
+ threshold="25%" 
+ position="bottom" 
+ (ionInfinite)="loadData()">
+   <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando...">
+   </ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+
+</ion-content>

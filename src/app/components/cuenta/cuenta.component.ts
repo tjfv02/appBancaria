@@ -9,7 +9,36 @@ import { Cuenta } from 'src/app/interfaces/interfaces';
 })
 export class CuentaComponent implements OnInit {
 
-  @Input() cuenta: Cuenta;
+ // @Input() cuenta: Cuenta;
+
+   cuentas: Cuenta[] = [{
+    NoCuenta: 122,
+    MonAho: false,
+    Nombre: 'CristianAz',
+    Monto: 1500,
+    Bloqueada: false
+  },
+  {
+    NoCuenta: 123,
+    MonAho: false,
+    Nombre: 'CristianAz',
+    Monto: 1234,
+    Bloqueada: false
+  },
+  {
+    NoCuenta: 124,
+    MonAho: true,
+    Nombre: 'CristianAz',
+    Monto: 900,
+    Bloqueada: false
+  },
+  {
+    NoCuenta: 125,
+    MonAho: true,
+    Nombre: 'CristianAz',
+    Monto: 760,
+    Bloqueada: false
+  }];
 
   constructor(
     private actionSheetCtrl: ActionSheetController,
