@@ -1,0 +1,6 @@
+{
+	"appId": "com.appBancaria",
+	"appName": "appBancaria",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
