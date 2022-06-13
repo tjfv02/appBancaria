@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActionSheetButton, ActionSheetController, Platform } from '@ionic/angular';
 import { Cuenta } from 'src/app/interfaces/interfaces';
 
 @Component({
@@ -38,7 +39,39 @@ export class HomePage implements OnInit {
   }];
   ideas: string[] = ['Spiderman', 'Avenger', 'La vida es bella'];
 
-  constructor() { }
+  constructor(
+    private actionSheetCtrl: ActionSheetController,
+    private platform: Platform
+    ) { }
+
+  async onAbrirMenu(){
+    console.log('mostrar opciones')
+
+    const normalBtns: ActionSheetButton[] = [
+      {
+        text: 'Historial',
+        icon: 'refresh-outline',
+        //agregar funcion de mostrar historial de la cuenta
+      },
+      {
+        text: 'Bloquear',
+        icon: 'alert-circle-outline',
+        //agregar funcion de bloquear
+      },
+      {
+        text: 'Cancelar',
+        icon: 'close-outline',
+        role: 'cancel'
+      }
+  ]
+
+  const actionSheet = await this.actionSheetCtrl.create({
+    header: 'Opciones',
+    buttons: normalBtns
+  });
+
+  await actionSheet.present();
+  }
 
   ngOnInit() {
   }

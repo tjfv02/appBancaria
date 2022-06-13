@@ -9,7 +9,7 @@ import { Cuenta } from 'src/app/interfaces/interfaces';
 })
 export class CuentaComponent implements OnInit {
 
- // @Input() cuenta: Cuenta;
+  @Input() cuenta: Cuenta;
 
    cuentas: Cuenta[] = [{
     NoCuenta: 122,
@@ -54,11 +54,17 @@ export class CuentaComponent implements OnInit {
         {
           text: 'Historial',
           icon: 'refresh-outline',
+          handler: () => {
+            console.log('Historial clicked');
+          }
           //agregar funcion de mostrar historial de la cuenta
         },
         {
           text: 'Bloquear',
           icon: 'alert-circle-outline',
+          handler: () => {
+            console.log('Bloquear clicked');
+          }
           //agregar funcion de bloquear
         },
         {

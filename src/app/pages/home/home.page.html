@@ -1,23 +1,34 @@
-<ion-header [translucent]="true" mode="ios" class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>
-      Cuentas
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-card *ngFor="let cuenta of cuentas">
 
-<ion-content [fullscreen]="true">
+  <ion-card-title class="ion-padding-horizontal ion-margin-bottom" >
+    <h2>CUENTA NO. {{cuenta.NoCuenta}}</h2>
+   </ion-card-title>
 
- <app-cuentas
- [cuentas]="cuentas">
- </app-cuentas>
+  <ion-card-subtitle class="ion-margin">
 
- <ion-infinite-scroll
- threshold="25%" 
- position="bottom" 
- (ionInfinite)="loadData()">
-   <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando...">
-   </ion-infinite-scroll-content>
- </ion-infinite-scroll>
+    <ion-row class="ion-align-items-center">
 
-</ion-content>
+      
+      <ion-col align="right">
+        <ion-button (click)="onAbrirMenu()" fill="clear">
+          <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+        </ion-button>
+        <p>Saldo</p>
+        <h3>Q.{{cuenta.Monto}}</h3>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card-subtitle>
+
+  <ion-card-content>
+    <p *ngIf="cuenta.MonAho">Tipo de cuenta: Ahorro
+    </p>
+    <p *ngIf="!cuenta.MonAho">Tipo de cuenta: Monetaria
+    </p>
+    <p>{{cuenta.Nombre}}</p>
+  </ion-card-content> 
+
+  
+</ion-card>
+
