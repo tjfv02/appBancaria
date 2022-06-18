@@ -21,6 +21,5 @@ export class LoginScreenPage implements OnInit {
     console.log(this.email);
     console.log(this.password);
 
-    
   }
 }
