@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { IonDatetime } from '@ionic/angular';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -10,25 +11,40 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SignupPage implements OnInit {
 
-  constructor(private authService: AuthService) { }
-
-   user: User;
+  usuario: User;
+  @Input() user: string;
+  @Input() names: string;
   @Input() email: string;
-  @Input() name: string;
   @Input() password: string;
-  @Input() phone: number;
+  @Input() fechaNacimiento: IonDatetime;
+  @Input() direccion: string;
+  @Input() phone: string;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  signup():void {
-    this.user.name = this.name;
-    this.user.email = this.email;
-    this.user.phone = this.phone;
+  signUp() {
+
     console.log(this.user);
-    // this.authService
-    // .signUp(this.user)
-    // .subscribe((msg) => console.log(msg));
+    console.log(this.names);
+    console.log(this.email);
+    console.log(this.password);
+    console.log(this.fechaNacimiento);
+    console.log(this.direccion);
+    console.log(this.phone);
+    
+    this.usuario.user = this.user;
+    this.usuario.name = this.names;
+     this.usuario.email = this.email;
+     this.usuario.password = this.password;
+     this.usuario.fechaNac = this.fechaNacimiento;
+     this.usuario.direccion = this.direccion;
+     this.usuario.phone =  this.phone;
+     this.authService
+     .signUp(this.usuario)
+   .subscribe((msg) => console.log(msg));
   }
 
 }

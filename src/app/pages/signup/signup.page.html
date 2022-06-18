@@ -19,23 +19,49 @@
 
     <ion-card-content>
       <ion-item>
-        <ion-input name="name" type="text" placeholder="Nombre Completo">
+        <ion-input name="user" type="text" placeholder="Usuario" [(ngModel)] = "user" required>
           <ion-icon slot="start" name="person-outline"></ion-icon>
         </ion-input>
       </ion-item>
+
       <ion-item>
-        <ion-input name="email" type="text" placeholder="Correo Electrónico">
+        <ion-input name="names" type="text" placeholder="Nombre Completo" [(ngModel)] = "names" required>
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="email" type="text" placeholder="Correo Electrónico" [(ngModel)] = "email" required>
           <ion-icon slot="start" name="mail-outline"></ion-icon>
         </ion-input>
       </ion-item>
+
       <ion-item>
-        <ion-input name="phone" type="text" placeholder="Teléfono">
+        <ion-input placeholder="contraseña" type="password" name="password" [(ngModel)] = "password" required ></ion-input>
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="fechaNacimiento" type="date" placeholder="Fecha de Nacimiento" [(ngModel)] = "fechaNacimiento" required>
+          <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="dirección" type="street-address" placeholder="Dirección" [(ngModel)] = "direccion" required>
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+      
+
+      <ion-item>
+        <ion-input name="phone" type="text" placeholder="Teléfono" [(ngModel)] = "phone" required>
           <ion-icon slot="start" name="call-outline"></ion-icon>
         </ion-input>
       </ion-item>
 
       <div class="sign-btn-wrap">
-        <ion-button shape="round" fill="solid" class="sign-btn" (click)="signup()">
+        <ion-button (click)="signUp()" shape="round" fill="solid" class="sign-btn">
           Registrar
         </ion-button>
       </div>
