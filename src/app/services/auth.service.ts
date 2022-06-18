@@ -19,7 +19,9 @@ export class AuthService {
   constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService) { }
 
   signUp(user: Omit<User, "id">): Observable<User> {
-    return this.http.post<User>(this.url, user, this.httpOptions).pipe(
+    return this.http
+    .post<User>(this.url, user, this.httpOptions)
+    .pipe(
       first(),
       catchError(this.errorHandlerService.handleError<User>("signup"))
     );

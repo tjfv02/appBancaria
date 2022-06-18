@@ -25,9 +25,10 @@ export class SignupPage implements OnInit {
     this.user.name = this.name;
     this.user.email = this.email;
     this.user.phone = this.phone;
-    this.authService
-    .signUp(this.user)
-    .subscribe((msg) => console.log(msg));
+    console.log(this.user);
+    // this.authService
+    // .signUp(this.user)
+    // .subscribe((msg) => console.log(msg));
   }
 
 }

@@ -16,7 +16,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     IonicModule,
     SignupPageRoutingModule,
     HttpClientModule,
-    HttpClient
   ],
   declarations: [SignupPage]
 })
