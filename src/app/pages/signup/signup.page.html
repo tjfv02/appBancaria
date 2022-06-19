@@ -61,7 +61,7 @@
       </ion-item>
 
       <div class="sign-btn-wrap">
-        <ion-button (click)="signUp()" shape="round" fill="solid" class="sign-btn">
+        <ion-button routerLink="/login-screen" (click)="signUp()" (click)="presentAlert()" shape="round" fill="solid" class="sign-btn">
           Registrar
         </ion-button>
       </div>

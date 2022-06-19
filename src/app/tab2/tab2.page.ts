@@ -40,11 +40,6 @@ export class Tab2Page {
 
   async onAbrirMenu(){
     const normalBtns: ActionSheetButton[] = [
-      // {
-      //   text: 'Historial',
-      //   icon: 'refresh-outline',
-      //   //agregar funcion de mostrar historial de la cuenta
-      // },
       {
         text: 'Bloquear',
         icon: 'alert-circle-outline',
