@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Menú de Opciones
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,56 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="medium">Menú de Opciones</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+  <br>
+  <style>
+      :root {
+        --ion-safe-area-top: 20px;
+        --ion-safe-area-bottom: 22px;
+      }
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      section {
+        margin-top: 5em;
+        margin-bottom: 2.5em;
+      }
+
+      section:not(.full-width),
+      .full-width > header {
+        padding: 0 20px;
+      }
+    </style>
+<section>
+
+  <div align="center">
+    <ion-button routerLink="/transfer-propias">
+      <ion-icon slot="end" name="person"></ion-icon>
+      Transferir a cuentas propias
+    </ion-button>
+  </div>
+  <br>
+
+  <div align="center">
+    <ion-button routerLink="/transfer-terceros">
+      <ion-icon slot="end" name="people"></ion-icon>
+      Transferir a terceros
+    </ion-button>
+  </div>
+  <br>
+
+  <div align="center">
+    <ion-button routerLink="/transfer-historial">
+      <ion-icon slot="end" name="alarm"></ion-icon>
+      Historial de transferencias
+    </ion-button>
+  </div>
+  
+</section>
+
+ 
+
+
+  
 </ion-content>

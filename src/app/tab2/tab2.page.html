@@ -1,17 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Banco
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card *ngFor="let cuenta of cuentas">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-card-title class="ion-padding-horizontal ion-margin-bottom" >
+      <h4>CUENTA NO. {{cuenta.noCuenta}}</h4>
+     </ion-card-title>
+  
+    <ion-card-subtitle class="ion-margin">
+  
+      <ion-row class="ion-align-items-center">
+        
+        <ion-col align="right">
+          <ion-button (click)="onAbrirMenu()" fill="clear">
+            <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+          </ion-button>
+          <p>Saldo</p>
+          <h3>Q.{{cuenta.monto}}</h3>
+        </ion-col>
+  
+      </ion-row>
+  
+    </ion-card-subtitle>
+  
+    <ion-card-content>
+      <p *ngIf="cuenta.monAho">Tipo de cuenta: Ahorro
+      </p>
+      <p *ngIf="!cuenta.monAho">Tipo de cuenta: Monetaria
+      </p>
+      <p>{{cuenta.nombre}}</p>
+    </ion-card-content> 
+  
+    
+  </ion-card>
+  
 </ion-content>

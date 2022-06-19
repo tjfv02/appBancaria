@@ -1,0 +1,43 @@
+<app-header titulo="Historial Transferencias"></app-header>
+
+<ion-content>
+    <ion-card *ngFor="let transferencia of transferencias">
+
+        <ion-card-title class="ion-padding-horizontal ion-margin-bottom" >
+          <h4>CUENTA NO. {{transferencia.numeroCuenta}}</h4>
+         </ion-card-title>
+      
+        <ion-card-subtitle class="ion-margin">
+      
+          <ion-row class="ion-align-items-center">
+            
+            <ion-col align="right">
+              <p>Monto transferido</p>
+              <h3>Q.{{transferencia.monto}}</h3>
+            </ion-col>
+      
+          </ion-row>
+      
+        </ion-card-subtitle>
+      
+        <ion-card-content>
+            <ion-text color="primary">
+                <p *ngIf="transferencia.tipoTransfer">Transferencia a cuentas propias
+                </p>
+                <p *ngIf="!transferencia.tipoTransfer">Transferncia a terceros
+                </p>
+            </ion-text>
+
+                <p *ngIf="transferencia.monAho">Tipo de cuenta: Ahorro
+                </p>
+                <p *ngIf="!transferencia.monAho">Tipo de cuenta: Monetaria
+                </p>
+            
+            <ion-text color="secondary">
+                <p>{{transferencia.user}}</p>
+            </ion-text>
+        </ion-card-content> 
+      
+        
+      </ion-card>
+</ion-content>
