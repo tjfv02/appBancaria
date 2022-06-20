@@ -1,0 +1,28 @@
+<app-header titulo="Selecciona una Cuenta"></app-header>
+
+<ion-content>
+  
+  <ion-list *ngFor="let cuentaAsociada of cuentasAsociadas" >
+    <ion-list-header>
+      {{ cuentaAsociada.nombre }}
+    </ion-list-header>
+
+    <ion-card>
+      <ion-card-content>
+        <p>Número de Cuenta: {{cuentaAsociada.noCuenta}}</p>
+        <p *ngIf="cuentaAsociada.monAho">Tipo de cuenta: Ahorro
+        </p>
+        <p *ngIf="!cuentaAsociada.monAho">Tipo de cuenta: Monetaria
+        </p>
+        
+        <div align="right">
+          <ion-button>
+            <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+          </ion-button>
+        </div>
+        
+      </ion-card-content> 
+    </ion-card>
+  </ion-list>
+
+</ion-content>

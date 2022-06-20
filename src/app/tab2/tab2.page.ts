@@ -8,6 +8,7 @@ import { Cuenta } from '../interfaces/interfaces';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+
   public cuentas: Cuenta[] = [{
     noCuenta: 122,
     monAho: false,

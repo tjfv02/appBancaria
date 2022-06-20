@@ -1,0 +1,23 @@
+<app-header titulo="Agregar Cuenta"></app-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Agregar cuenta</ion-card-subtitle>
+    <ion-text color="primary">
+      <h6>Número de Cuenta</h6>
+    </ion-text>
+    <ion-item>
+      <ion-input name="numeroCuenta" type="text" [(ngModel)] = "numeroCuenta" required>
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <br>
+    <div align="center">
+      <ion-button (click)="agregarCuenta()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card-header>
+</ion-card>
+</ion-content>

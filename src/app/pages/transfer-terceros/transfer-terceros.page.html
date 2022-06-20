@@ -1,5 +1,56 @@
-<app-header titulo="Transferencias a Terceros"></app-header>
+<app-header titulo="Transferencias a terceros"></app-header>
 
 <ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle><h6>Transferir de</h6></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-subtitle>{{ cuenta }}</ion-card-subtitle>
+                <ion-card-subtitle>
+                    <ion-text color="secondary">
+                        {{ tipoCuenta }}
+                    </ion-text>
+                </ion-card-subtitle>
+                <ion-card-subtitle>
+                    Disponible: 
+                    <ion-text color="primary">
+                        Q.{{ saldo }}
+                    </ion-text>
+                </ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle><h6>Transferir a</h6></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-button  routerLink="/transfer-cuentas" expand="block" fill="clear" shape="round">
+                <ion-icon name="arrow-forward" slot="end"></ion-icon>
+                Seleccionar Cuenta a transferir
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle><h6>Monto</h6></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-input type="number" placeholder="Monto a transferir (GTQ)"></ion-input>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle><h6>Comentario</h6></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-card-content>
+                <ion-textarea placeholder="Ingresa una descripción de la transacción"></ion-textarea>
+            </ion-card-content>
+            
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

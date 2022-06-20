@@ -14,3 +14,13 @@ export interface Transferencia {
     monAho: boolean;//false = monetaria, true = ahorro
     estado: string;
 }
+
+export interface CuentaAsociada{
+    noCuenta: number;
+    monAho: boolean;//false = monetaria, true = ahorro
+    nombre: string;
+}
+
+interface TextareaChangeEventDetail {
+    value?: string | null;
+  }

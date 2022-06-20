@@ -1,9 +1,10 @@
 <app-header titulo="Transferencias propias"></app-header>
 
 <ion-content>
+
     <ion-card>
         <ion-card-header>
-            <ion-card-subtitle><h6>Transferir de</h6></ion-card-subtitle>
+            <ion-card-subtitle><h6>Transfiriendo de</h6></ion-card-subtitle>
         </ion-card-header>
         <ion-card>
             <ion-card-header>
@@ -13,6 +14,7 @@
                         {{ tipoCuenta }}
                     </ion-text>
                 </ion-card-subtitle>
+
                 <ion-card-subtitle>
                     Disponible: 
                     <ion-text color="primary">
@@ -22,17 +24,7 @@
             </ion-card-header>
         </ion-card>
     </ion-card>
-    <ion-card>
-        <ion-card-header>
-            <ion-card-subtitle><h6>Transferir a</h6></ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-            <ion-button  expand="block" fill="clear" shape="round">
-                <ion-icon name="arrow-forward" slot="end"></ion-icon>
-                Seleccionar Cuenta a transferir
-            </ion-button>
-        </ion-card-content>
-    </ion-card>
+   
     <ion-card>
         <ion-card-header>
             <ion-card-subtitle><h6>Monto</h6></ion-card-subtitle>
@@ -41,13 +33,47 @@
             <ion-input type="number" placeholder="Monto a transferir (GTQ)"></ion-input>
         </ion-card-content>
     </ion-card>
+
     <ion-card>
         <ion-card-header>
             <ion-card-subtitle><h6>Comentario</h6></ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
+            <ion-card-content>
+                <ion-textarea placeholder="Ingresa una descripción de la transacción"></ion-textarea>
+            </ion-card-content>
             
         </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+
+        <ion-card-header>
+            <ion-card-subtitle><h6>Transferir a</h6></ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+                  <ion-card *ngFor="let cuentaAsociada of cuentasAsociadas">
+                    <ion-card-header>
+                        {{ cuentaAsociada.nombre }}
+                    </ion-card-header>
+                    <ion-card-content>
+                      <p>Número de Cuenta: {{cuentaAsociada.noCuenta}}</p>
+                      <p *ngIf="cuentaAsociada.monAho">Tipo de cuenta: Ahorro
+                      </p>
+                      <p *ngIf="!cuentaAsociada.monAho">Tipo de cuenta: Monetaria
+                      </p>
+                      
+                      <div align="right">
+                        <ion-button>
+                          <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+                        </ion-button>
+                      </div>
+                      
+                    </ion-card-content> 
+                  </ion-card>
+        </ion-card-content>
+        
     </ion-card>
 
 </ion-content>

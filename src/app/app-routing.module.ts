@@ -41,6 +41,14 @@ const routes: Routes = [
   {
     path: 'transfer-historial',
     loadChildren: () => import('./pages/transfer-historial/transfer-historial.module').then( m => m.TransferHistorialPageModule)
+  },
+  {
+    path: 'transfer-cuentas',
+    loadChildren: () => import('./pages/transfer-cuentas/transfer-cuentas.module').then( m => m.TransferCuentasPageModule)
+  },
+  {
+    path: 'agregar-cuenta',
+    loadChildren: () => import('./pages/agregar-cuenta/agregar-cuenta.module').then( m => m.AgregarCuentaPageModule)
   }
 ];
 @NgModule({
