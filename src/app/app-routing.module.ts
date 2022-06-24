@@ -49,6 +49,26 @@ const routes: Routes = [
   {
     path: 'agregar-cuenta',
     loadChildren: () => import('./pages/agregar-cuenta/agregar-cuenta.module').then( m => m.AgregarCuentaPageModule)
+  },
+  {
+    path: 'admin-inicio',
+    loadChildren: () => import('./pages/admin-inicio/admin-inicio.module').then( m => m.AdminInicioPageModule)
+  },
+  {
+    path: 'admin-crear-cuenta',
+    loadChildren: () => import('./pages/admin-crear-cuenta/admin-crear-cuenta.module').then( m => m.AdminCrearCuentaPageModule)
+  },
+  {
+    path: 'admin-acreditar-cuenta',
+    loadChildren: () => import('./pages/admin-acreditar-cuenta/admin-acreditar-cuenta.module').then( m => m.AdminAcreditarCuentaPageModule)
+  },
+  {
+    path: 'admin-cuentas',
+    loadChildren: () => import('./pages/admin-cuentas/admin-cuentas.module').then( m => m.AdminCuentasPageModule)
+  },
+  {
+    path: 'editar-perfil',
+    loadChildren: () => import('./pages/editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
   }
 ];
 @NgModule({

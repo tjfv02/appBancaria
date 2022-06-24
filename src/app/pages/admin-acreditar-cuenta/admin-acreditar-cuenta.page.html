@@ -1,0 +1,24 @@
+<app-header titulo="Acreditar Cuenta"></app-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+   
+  </ion-card-header>
+  <ion-card-content>
+    
+    <ion-item>
+      <ion-input name="monto" type="text" placeholder=" Ingrese el monto a Acreditar" [(ngModel)] = "monto" required>
+        <ion-icon slot="start" name="cash-outline"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <br>
+    <div align="center">
+      <ion-button (click)="acreditar()" (click)="presentAlert()" routerLink="/admin-cuentas">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </div>
+
+  </ion-card-content>
+</ion-card>
+</ion-content>

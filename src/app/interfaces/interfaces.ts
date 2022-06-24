@@ -24,3 +24,16 @@ export interface CuentaAsociada{
 interface TextareaChangeEventDetail {
     value?: string | null;
   }
+
+export interface User{
+    user: string;
+    password: string;
+    nombre: string;
+    email: string;
+    telefono: string;
+    direccion: string;
+    fechaNacimiento: string;
+    fechaRegistro: string;
+    cuentas: Cuenta[];
+    cuentasAsociadas: CuentaAsociada[];
+}

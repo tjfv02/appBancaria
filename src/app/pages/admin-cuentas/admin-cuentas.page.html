@@ -1,0 +1,54 @@
+<app-header titulo="Cuentas existentes"></app-header>
+
+<ion-content>
+  <ion-card *ngFor="let cuenta of cuentas">
+
+    <ion-card-title class="ion-padding-horizontal ion-margin-bottom" >
+      <h4>CUENTA NO. {{cuenta.noCuenta}}</h4>
+     </ion-card-title>
+  
+    <ion-card-subtitle class="ion-margin">
+  
+      <ion-row class="ion-align-items-center">
+        <ion-col align="right">
+          <p>Saldo</p>
+          <h3>Q.{{cuenta.monto}}</h3>
+        </ion-col>
+      </ion-row>
+  
+    </ion-card-subtitle>
+  
+    <ion-card-content>
+      <p *ngIf="cuenta.monAho">Tipo de cuenta: Ahorro
+      </p>
+      <p *ngIf="!cuenta.monAho">Tipo de cuenta: Monetaria
+      </p>
+      <p>{{cuenta.nombre}}</p>
+        Estado de la cuenta: 
+        <p *ngIf="cuenta.bloqueada">
+          <ion-text color="primary">
+            <p>BLOQUEADA</p>
+          </ion-text>
+        </p>
+        <p *ngIf="!cuenta.bloqueada">
+          <ion-text color="primary">
+            <p>DESBLOQUEADA</p>
+          </ion-text>
+        </p>
+    </ion-card-content> 
+    <ion-card>
+      <ion-button (click)="cambiarEstadoCuenta(cuenta)" expand="block" fill="clear" shape="round">
+        <p *ngIf="cuenta.bloqueada">
+            Desbloquear cuenta
+        </p>
+        <p *ngIf="!cuenta.bloqueada">
+            Bloquear cuenta
+        </p>
+      </ion-button>
+      <ion-button routerLink="/admin-acreditar-cuenta" expand="block" fill="clear" shape="round">
+        Acreditar Cuenta
+      </ion-button>
+    </ion-card>
+    
+  </ion-card>
+</ion-content>

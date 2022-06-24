@@ -1,20 +1,16 @@
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
-    
-    <ion-buttons slot="start">
-      <ion-back-button defaulthref="login" text="">
-      </ion-back-button>
-    </ion-buttons>
+    <ion-title> Editar Perfil </ion-title>
+    <ion-button (click)="salirSinArgumentos()" expand="block" fill="clear" shape="round" slot="start">
+      Cancelar
+    </ion-button>
   </ion-toolbar>
-
 </ion-header>
 
-<ion-content class="bg-color">
-
+<ion-content class="ion-padding">
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Crea tu cuenta!</ion-card-subtitle>
-      <ion-card-title>Registrate!</ion-card-title>
+      <ion-card-subtitle>Editar Perfil</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
@@ -37,8 +33,9 @@
       </ion-item>
 
       <ion-item>
-        <ion-input placeholder="contraseña" type="password" name="password" [(ngModel)] = "password" required ></ion-input>
+        <ion-input placeholder="contraseña" type="password" name="password" [(ngModel)] = "password" required >
         <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        </ion-input>
       </ion-item>
 
       <ion-item>
@@ -61,9 +58,9 @@
         </ion-input>
       </ion-item>
 
-      <div class="sign-btn-wrap">
-        <ion-button routerLink="/login-screen" (click)="signUp()" (click)="presentAlert()" shape="round" fill="solid" class="sign-btn">
-          Registrar
+      <div align="center">
+        <ion-button routerLink="/" (click)="salirConArgumentos()" (click)="presentAlert()" shape="round" fill="solid" class="sign-btn">
+          Editar
         </ion-button>
       </div>
 
@@ -71,4 +68,5 @@
     </ion-card-content>
 
   </ion-card>
+  
 </ion-content>

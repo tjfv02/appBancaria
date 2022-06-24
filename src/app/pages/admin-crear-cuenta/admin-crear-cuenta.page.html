@@ -9,60 +9,62 @@
 
 </ion-header>
 
-<ion-content class="bg-color">
+<ion-content>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Crea tu cuenta!</ion-card-subtitle>
+      <ion-card-subtitle>Crea cuenta</ion-card-subtitle>
       <ion-card-title>Registrate!</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
       <ion-item>
-        <ion-input name="user" type="text" placeholder="Usuario" [(ngModel)] = "user" required>
+        <ion-input name="user" type="text" placeholder=" Usuario" [(ngModel)] = "user" required>
           <ion-icon slot="start" name="person-outline"></ion-icon>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="names" type="text" placeholder="Nombre Completo" [(ngModel)] = "names" required>
+        <ion-input name="names" type="text" placeholder=" Nombre Completo" [(ngModel)] = "names" required>
           <ion-icon slot="start" name="person-outline"></ion-icon>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="email" type="text" placeholder="Correo Electrónico" [(ngModel)] = "email" required>
+        <ion-input name="email" type="text" placeholder=" ejemplo@gmail.com" [(ngModel)] = "email" required>
           <ion-icon slot="start" name="mail-outline"></ion-icon>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input placeholder="contraseña" type="password" name="password" [(ngModel)] = "password" required ></ion-input>
-        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-input placeholder=" Contraseña" type="password" name="password" [(ngModel)] = "password" required >
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        </ion-input>
+        
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Fecha de Nacimiento</ion-label>
-        <ion-input name="fechaNacimiento" type="date" placeholder="Fecha de Nacimiento" [(ngModel)] = "fechaNacimiento" required>
+        <ion-input name="fechaNacimiento" type="date" placeholder=" Fecha de Nacimiento" [(ngModel)] = "fechaNacimiento" required>
           <ion-icon slot="start" name="calendar-outline"></ion-icon>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="dirección" type="street-address" placeholder="Dirección" [(ngModel)] = "direccion" required>
+        <ion-input name="dirección" type="street-address" placeholder=" Dirección" [(ngModel)] = "direccion" required>
           <ion-icon slot="start" name="home-outline"></ion-icon>
         </ion-input>
       </ion-item>
       
 
       <ion-item>
-        <ion-input name="phone" type="text" placeholder="Teléfono" [(ngModel)] = "phone" required>
+        <ion-input name="phone" type="text" placeholder=" Teléfono" [(ngModel)] = "phone" required>
           <ion-icon slot="start" name="call-outline"></ion-icon>
         </ion-input>
       </ion-item>
 
       <div class="sign-btn-wrap">
-        <ion-button routerLink="/login-screen" (click)="signUp()" (click)="presentAlert()" shape="round" fill="solid" class="sign-btn">
+        <ion-button routerLink="/admin-inicio" (click)="signUp()" (click)="presentAlert()" shape="round" fill="solid" class="sign-btn">
           Registrar
         </ion-button>
       </div>
